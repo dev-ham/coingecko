@@ -2,7 +2,7 @@ class Coingecko::API
 
   def self.api_call(endpoint="coins")
     #defaults to list coins if no argument passed
-    res = open("https://api.coingecko.com/api/v3/#{endpoint}").read 
+    res = open("https://pro-api.coingecko.com/api/v3/#{endpoint}?x_cg_pro_api_key=#{ENV['COINGECKO_KEY']}").read
     @json = JSON.parse(res)
     @json
   end
